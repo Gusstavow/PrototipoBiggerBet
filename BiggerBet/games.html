@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIGGERBET | Jogos</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h1 class="glitch-text" data-text="BIGGERBET">BIGGERBET</h1>
+                <p class="tagline">Onde o loss é garantido.</p>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">📊 Dashboard</a></li>
+                    <li><a href="games.html" class="active">🎰 Jogos</a></li>
+                    <li><a href="shop.html">🛒 Loja Mágica</a></li>
+                </ul>
+            </nav>
+            
+            <div style="margin-top: auto;">
+                <div class="wallet-badge glass">
+                    <span class="wallet-label">SALDO ATUAL</span>
+                    <span class="wallet-value" id="wallet-balance">$10000</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="app-header">
+                <h2>CASSINO INTERGALÁCTICO</h2>
+                <p class="tagline">Deposite suas esperanças e saia sem nada</p>
+            </header>
+
+            <div class="container games-grid">
+                
+                <!-- Game 1: Space Slot -->
+                <section id="slot" class="panel glass">
+                    <div class="panel-header">
+                        <h2>Space Slot</h2>
+                    </div>
+                    <div class="slot-machine">
+                        <div class="slot-display" id="slot-display">
+                            GIRO INICIAL: DESESPERO
+                        </div>
+                        <div class="bet-controls">
+                            <label for="slot-bet">Aposta ($):</label>
+                            <input type="number" id="slot-bet" value="100" min="10" step="10">
+                        </div>
+                        <button class="btn btn-primary" id="btn-spin-slot">Perder Dinheiro Agora</button>
+                    </div>
+                </section>
+
+                <!-- Game 2: Blackhole Roulette -->
+                <section id="roulette" class="panel glass">
+                    <div class="panel-header">
+                        <h2>Blackhole Roulette</h2>
+                    </div>
+                    <div class="roulette-container">
+                        <div class="roulette-wheel" id="roulette-wheel">
+                            <div class="center-hole"></div>
+                        </div>
+                        <div class="roulette-tooltip" id="roulette-tooltip"></div>
+                    </div>
+                    <div class="bet-controls" style="justify-content: center;">
+                        <label for="roulette-bet">Aposta ($):</label>
+                        <input type="number" id="roulette-bet" value="500" min="50" step="50">
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="btn btn-secondary" id="btn-spin-roulette">Tentar a Sorte (E Falhar)</button>
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="app-footer">
+                <p>⚠️ BIGGERBET é uma simulação satírica. Se você tem problemas reais com apostas, procure ajuda.</p>
+            </footer>
+        </main>
+    </div>
+
+    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;"></div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -352,3 +352,79 @@
     opacity: 1;
     bottom: -100%;
 }
+
+/* 7. Assets / Life System */
+.assets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.asset-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-fast);
+}
+
+.asset-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.asset-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.asset-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.asset-details h3 {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.asset-details p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.asset-value {
+    color: var(--neon-money);
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-right: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.asset-action {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .asset-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .asset-action {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

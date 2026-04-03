@@ -69,7 +69,6 @@ export function logSpin(type, betAmount = 0) {
     const luck = Math.random();
     
     const DRAW_MESSAGES = [
-        "Até um relógio parado acerta a hora... uma vez.",
         "Acontece de vez em quando, não se acostume.",
         "A sorte de um tolo é curta. Aproveite, será a última.",
         "Isso foi um erro no sistema, certamente não se repetirá.",
