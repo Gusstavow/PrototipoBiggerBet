@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIGGERBET | Manual do Loss</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    
+    <style>
+        .loss-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 900px) {
+            .loss-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .loss-full {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .loss-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loss-card h3 {
+            color: var(--neon-pink);
+            font-size: 1.25rem;
+            text-shadow: var(--shadow-neon-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .ironic-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .objective-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-left: 3px solid var(--neon-cyan);
+            border-radius: 0 4px 4px 0;
+            margin-top: auto;
+        }
+
+        /* Chart Animation */
+        .chart-container {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            position: relative;
+            margin-top: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .chart-line {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right bottom, var(--neon-money) 0%, var(--neon-pink) 100%);
+            clip-path: polygon(0 20%, 20% 15%, 40% 40%, 60% 35%, 80% 80%, 100% 95%, 100% 100%, 0% 100%);
+            opacity: 0.7;
+            animation: fall 3s infinite alternate ease-in-out;
+        }
+
+        .chart-axis-x {
+            position: absolute;
+            bottom: 5px;
+            left: 20px;
+            right: 20px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            padding-top: 5px;
+        }
+
+        .chart-axis-y {
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            bottom: 20px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            border-right: 1px dashed rgba(255, 255, 255, 0.2);
+            padding-right: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes fall {
+            0% {
+                clip-path: polygon(0 20%, 20% 15%, 40% 40%, 60% 35%, 80% 80%, 100% 90%, 100% 100%, 0% 100%);
+            }
+            100% {
+                clip-path: polygon(0 30%, 20% 35%, 40% 60%, 60% 55%, 80% 95%, 100% 99%, 100% 100%, 0% 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h1 class="glitch-text" data-text="BIGGERBET">BIGGERBET</h1>
+                <p class="tagline">Onde o loss é garantido.</p>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">📊 Dashboard</a></li>
+                    <li><a href="games.html">🎰 Jogos</a></li>
+                    <li><a href="shop.html">🛒 Loja Mágica</a></li>
+                    <li><a href="manual-do-loss.html" class="active">📖 Manual do Loss</a></li>
+                </ul>
+            </nav>
+            
+            <div style="margin-top: auto;">
+                <div class="wallet-badge glass">
+                    <span class="wallet-label">SALDO ATUAL</span>
+                    <span class="wallet-value" id="wallet-balance">$10000</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="app-header">
+                <h2 style="color: var(--neon-pink); text-shadow: var(--shadow-neon-pink);">MANUAL DO LOSS</h2>
+                <p class="tagline">Os bastidores matemáticos da sua ruína iminente</p>
+            </header>
+
+            <div class="container loss-grid">
+                
+                <section class="panel glass loss-card">
+                    <div class="panel-header">
+                        <h3>1. A Matemática da Casa</h3>
+                    </div>
+                    <p class="ironic-text">
+                        Bem-vindo à nossa impressora de dinheiro. Você acha que a roleta tem 36 números para ser emocionante? Tem 37 (ou 38) porque esse zero verdinho garante que, a cada giro da galáxia, uma fração do seu patrimônio seja transferida magicamente para o nosso caixa. É pura física quântica: o dinheiro sai do seu bolso e entra na nossa conta-corrente em outra dimensão.
+                    </p>
+                    <p class="objective-text">
+                        (<strong>Explicação objetiva:</strong> A "vantagem da casa" ou "house edge" é uma vantagem matemática garantida nas regras do jogo. Na roleta européia, o zero representa uma vantagem de 2.7% para o cassino, o que significa que, para cada $100 apostados, a casa estatisticamente reterá $2.70 a longo prazo, garantindo lucro permanente para o operador.)
+                    </p>
+                </section>
+
+                <section class="panel glass loss-card">
+                    <div class="panel-header">
+                        <h3>2. O Efeito "Quase Lá"</h3>
+                    </div>
+                    <p class="ironic-text">
+                        Sabe aquele momento em que a maçã, a maçã... e depois vem um limão? A máquina não "quase" deu sorte. Ela calculou com precisão cirúrgica o resultado exato para fazer o seu cérebro liberar dopamina e sussurrar: "Na próxima vai!". Spoiler: Não vai. Mas o nosso departamento de neurociência agradece a sua contribuição diária.
+                    </p>
+                    <p class="objective-text">
+                        (<strong>Explicação objetiva:</strong> O "near miss" é um efeito engenhoso onde os rolos da máquina param estrategicamente perto de elementos premiados. Isso engana o jogador ativando áreas de recompensa do cérebro, dando a falsa sensação de que uma grande vitória está prestes a ocorrer, aumentando assim a compulsão pelo jogo mesmo em vitórias falhas.)
+                    </p>
+                </section>
+
+                <section class="panel glass loss-card loss-full">
+                    <div class="panel-header">
+                        <h3>3. O Mito dos R$ 500 Grátis</h3>
+                    </div>
+                    <p class="ironic-text">
+                        Parabéns, trouxa... digo, vencedor! Você acaba de receber quinhentão de "presente"! O único e irrelevante detalhe é que, pelo nosso Contrato Espacial de Rollover (linha 4.542, fonte tamanho 2), você precisa apostar esse valor 800 vezes num intervalo cronometrado pela órbita de Júpiter. Retire seu dinheiro... assim que conseguir quebrar as leis matemáticas do universo e da termodinâmica!
+                    </p>
+                    <p class="objective-text">
+                        (<strong>Explicação objetiva:</strong> A Armadilha do Rollover: Muitas casas de apostas utilizam o bônus de boas-vindas como uma isca para prender o seu capital. O 'Rollover' é uma cláusula contratual que exige que você aposte o valor recebido (e muitas vezes o seu depósito também) dezenas de vezes antes de liberar qualquer saque. Na prática, como a vantagem matemática da casa é aplicada a cada nova aposta, a probabilidade estatística de o seu saldo ser totalmente consumido antes de você cumprir esses requisitos é próxima de 100%. Você não recebeu um presente; você recebeu uma dívida de tempo e sorte.)
+                    </p>
+                </section>
+
+                <section class="panel glass loss-card loss-full">
+                    <div class="panel-header">
+                        <h3>4. A Gravidade do Seu Saldo</h3>
+                    </div>
+                    <p class="ironic-text">
+                        Eis a representação gráfica do seu futuro. O eixo X é a sua crença de que hoje será o seu "Dia de Sorte". O eixo Y era a sua poupança ou fundo mútuo de pensão. Observe a linha afundando rumo ao zero absoluto. Aprecie a vista matemática.
+                    </p>
+                    <p class="objective-text">
+                        (<strong>Explicação objetiva:</strong> Esta é a representação do Valor Esperado Negativo (EV-). Se um jogo tem expectativa matemática negativa para você, quanto mais tempo você jogar, mais o seu saldo real vai aderir perfeitamente à probabilidade estatística: que é diminuir com o passar do tempo.)
+                    </p>
+
+                    <div class="chart-container">
+                        <div class="chart-axis-y">Saldo Real ($)</div>
+                        <div class="chart-axis-x">Tempo Jogado / Esperança</div>
+                        <div class="chart-line"></div>
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="app-footer">
+                <p>⚠️ BIGGERBET é uma simulação satírica. Se você tem problemas reais com apostas, procure ajuda profissional.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Toast UI Notifications -->
+    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;"></div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
