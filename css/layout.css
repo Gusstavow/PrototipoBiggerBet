@@ -133,3 +133,126 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.5rem;
 }
+
+/* Responsive Mobile Layout (Fixed Header & Bottom Nav) */
+@media (max-width: 899px) {
+    .app-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border: none;
+        padding: 0;
+        background: transparent;
+    }
+
+    .sidebar-logo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: var(--bg-dark-glass);
+        z-index: 1000;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .sidebar-logo h1 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .sidebar-logo .tagline {
+        display: none;
+    }
+
+    .sidebar > div[style*="margin-top: auto"] {
+        position: fixed;
+        top: 0.5rem;
+        right: 1rem;
+        margin-top: 0 !important;
+        z-index: 1001;
+    }
+
+    .wallet-badge {
+        padding: 0.25rem 0.75rem;
+        border-width: 1px;
+    }
+
+    .wallet-label {
+        font-size: 0.5rem;
+    }
+
+    .wallet-value {
+        font-size: 1rem;
+    }
+
+    nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark-glass);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+    }
+
+    .nav-links a.active {
+        box-shadow: 0 -2px 10px rgba(255, 42, 109, 0.2) inset;
+        background: rgba(255, 42, 109, 0.1);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+    .app-header {
+        padding: 1rem 1rem 0.5rem;
+    }
+
+    .app-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .container {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .panel {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+}
